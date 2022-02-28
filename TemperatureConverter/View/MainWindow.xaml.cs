@@ -26,8 +26,7 @@ namespace View
         }
 
         private void ConvertToCelsius(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(this, "You clicked the button", "Clicked!");
+        { 
             textBox.Text = "You good guy!";
         }
     }
