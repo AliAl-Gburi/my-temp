@@ -26,8 +26,13 @@ namespace View
         }
 
         private void ConvertToCelsius(object sender, RoutedEventArgs e)
-        { 
-            textBox.Text = "You good guy!";
+        {
+            string fString = textBox.Text;
+            var fDouble = double.Parse(fString);
+            var cDouble = 5 * (fDouble - 32) / 9;
+            string cString = cDouble.ToString();
+            textBox.Text = cString;
+
         }
     }
 }
