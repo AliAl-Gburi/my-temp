@@ -34,5 +34,15 @@ namespace View
             textBox.Text = cString;
 
         }
+
+        private void ConvertToFahrenheit(object sender, RoutedEventArgs e)
+        {
+            String cstring = textBox.Text;
+            var cDouble = double.Parse(cstring);
+            var fDouble = (cDouble * 9 / 5) + 32;
+            string fString = fDouble.ToString();
+            textBox.Text = fString;
+
+        }
     }
 }
