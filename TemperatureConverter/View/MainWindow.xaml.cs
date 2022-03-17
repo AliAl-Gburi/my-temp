@@ -27,21 +27,21 @@ namespace View
 
         private void ConvertToCelsius(object sender, RoutedEventArgs e)
         {
-            string fString = textBox.Text;
+            string fString = textBoxF.Text;
             var fDouble = double.Parse(fString);
             var cDouble = 5 * (fDouble - 32) / 9;
             string cString = cDouble.ToString();
-            textBox.Text = cString;
+            textBoxC.Text = cString;
 
         }
 
         private void ConvertToFahrenheit(object sender, RoutedEventArgs e)
         {
-            String cstring = textBox.Text;
+            String cstring = textBoxC.Text;
             var cDouble = double.Parse(cstring);
             var fDouble = (cDouble * 9 / 5) + 32;
             string fString = fDouble.ToString();
-            textBox.Text = fString;
+            textBoxF.Text = fString;
 
         }
     }
