@@ -25,25 +25,7 @@ namespace View
             InitializeComponent();
         }
 
-        private void ConvertToCelsius(object sender, RoutedEventArgs e)
-        {
-            string fString = textBoxF.Text;
-            var fDouble = double.Parse(fString);
-            var cDouble = 5 * (fDouble - 32) / 9;
-            string cString = cDouble.ToString();
-            textBoxC.Text = cString;
 
-        }
-
-        private void ConvertToFahrenheit(object sender, RoutedEventArgs e)
-        {
-            String cstring = textBoxC.Text;
-            var cDouble = double.Parse(cstring);
-            var fDouble = (cDouble * 9 / 5) + 32;
-            string fString = fDouble.ToString();
-            textBoxF.Text = fString;
-
-        }
 
         private void ConvertCelcius(object sender, RoutedEventArgs e)
         {
