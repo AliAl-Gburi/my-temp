@@ -31,15 +31,34 @@
 
     </Window.Resources>
     <StackPanel>
-
-        <TextBlock Text="Value in Celcius:" Style="{StaticResource labelStyle}" />
-        <TextBox x:Name="textBoxC" Style="{StaticResource textBoxStyle}"/>
-
-        <TextBlock Text="Value in Fahrenheit:" Style="{StaticResource labelStyle}" />
-        <TextBox x:Name="textBoxF" Style="{StaticResource textBoxStyle}"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Value in Celcius:" Style="{StaticResource labelStyle}" />
+            <TextBox Grid.Row="1" x:Name="textBoxC" Style="{StaticResource textBoxStyle}"/>
+            <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Content="Convert to Fahrenheit" Click="ConvertToFahrenheit" Style="{StaticResource buttonStyle}"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Value in Fahrenheit:" Style="{StaticResource labelStyle}" />
+            <TextBox Grid.Row="1" x:Name="textBoxF" Style="{StaticResource textBoxStyle}"/>
+            <Button Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Content="Convert to Celsius" Click="ConvertToCelsius" Style="{StaticResource buttonStyle}"/>
+        </Grid>
         
-        <Button Content="Convert to Celsius" Click="ConvertToCelsius" Style="{StaticResource buttonStyle}"/>
-        <Button Content="Convert to Fahrenheit" Click="ConvertToFahrenheit" Style="{StaticResource buttonStyle}"/>
+        
     </StackPanel>
     
 </Window>
