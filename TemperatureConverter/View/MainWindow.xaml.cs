@@ -54,9 +54,7 @@ namespace View
 
             
 
-            var fDouble = (cDouble * 9 / 5) + 32;
-            string fString = fDouble.ToString();
-            textBoxF.Text = fString;
+            
 
         }
     }
