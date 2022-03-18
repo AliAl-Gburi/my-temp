@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,60 +26,33 @@ namespace View
             InitializeComponent();
         }
 
-
-
-        private void ConvertCelcius(object sender, RoutedEventArgs e)
+        public class CelsiusConverter : IValueConverter
         {
-            string cString = textBoxC.Text;
-            var cDouble = double.Parse(cString);
+            public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                var kelvin = (double)value;
+                var celsius = kelvin - 273.15;
 
-            var fDouble = (cDouble * 9 / 5) + 32;
-            string fString = fDouble.ToString();
-            textBoxF.Text = fString;
+                return celsius.ToString();
+            }
 
-            var kDouble = cDouble + 273.15;
-            string kString = kDouble.ToString();
-            textBoxK.Text = kString;
+            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                var celsius = double.Parse((string)value);
+                var kelvin = celsius + 273.15;
 
-
+                return kelvin;
+            }
         }
 
-        private void ConvertFahrenheit(object sender, RoutedEventArgs e)
-        {
-            string fString = textBoxF.Text;
-            var fDouble = double.Parse(fString);
 
-            var cDouble = 5 * (fDouble - 32) / 9;
-            string cString = cDouble.ToString();
-            textBoxC.Text = cString;
-
-            var kDouble = cDouble + 273.15;
-            string kString = kDouble.ToString();
-            textBoxK.Text = kString;
-        }
-
-        private void ConvertKelvin(object sender, RoutedEventArgs e)
-        {
-            string kString = textBoxK.Text;
-            var kDouble = double.Parse(kString);
-
-            var cDouble = kDouble - 273.15;
-            string cString = cDouble.ToString();
-            textBoxC.Text = cString;
-
-            var fDouble = (cDouble * 9 / 5) + 32;
-            string fString = fDouble.ToString();
-            textBoxF.Text = fString;
-        }
 
         private void SliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             var kDouble = slider.Value;
             
 
-            var cDouble = kDouble - 273.15;
-            string cString = cDouble.ToString();
-            textBoxC.Text = cString;
+            
 
             var fDouble = (cDouble * 9 / 5) + 32;
             string fString = fDouble.ToString();

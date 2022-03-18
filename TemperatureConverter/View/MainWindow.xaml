@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
+      
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
+        <CelsiusConverter x:Name="celsiusConverter">
+            
+        </CelsiusConverter>
         <Style x:Key="labelStyle" TargetType="{x:Type TextBlock}">
             <Setter Property="Background">
                 <Setter.Value>
@@ -66,7 +70,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="Value in Kelvin:" Style="{StaticResource labelStyle}" />
-            <TextBox Grid.Row="1" x:Name="textBoxK" Style="{StaticResource textBoxStyle}"/>
+            <TextBox Grid.Row="1" Text="{Binding ElementName=slider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textBoxStyle}"/>
            
         </Grid>
         <Slider x:Name="slider" Minimum="0" Maximum="1000" ValueChanged="SliderValueChanged"/>
