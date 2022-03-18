@@ -29,24 +29,7 @@ namespace View
 
 
     }
-    public class FahrenheitConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            var kelvin = (double)value;
-            var fahrenheit = 1.8 * (kelvin - 273.15) + 32;
-
-            return fahrenheit.ToString();
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            var fahrenheit = double.Parse((string)value);
-            var kelvin = (fahrenheit + 459.67) * (5 / 9);
-
-            return kelvin;
-        }
-    }
+    
     public class CelsiusConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -66,6 +49,25 @@ namespace View
         }
     }
 
-   
-   
+    public class FahrenheitConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var kelvin = (double)value;
+            var fahrenheit = 1.8 * (kelvin - 273.15) + 32;
+
+            return fahrenheit.ToString();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var fahrenheit = double.Parse((string)value);
+            var kelvin = (fahrenheit + 459.67) * (5 / 9);
+
+            return kelvin;
+        }
+    }
+
+
+
 }
