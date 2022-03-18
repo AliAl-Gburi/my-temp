@@ -70,5 +70,21 @@ namespace View
             string fString = fDouble.ToString();
             textBoxF.Text = fString;
         }
+
+        private void SliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            var kDouble = slider.Value;
+            string kString = kDouble.ToString();
+            textBoxK.Text = kString;
+
+            var cDouble = kDouble - 273.15;
+            string cString = cDouble.ToString();
+            textBoxC.Text = cString;
+
+            var fDouble = (cDouble * 9 / 5) + 32;
+            string fString = fDouble.ToString();
+            textBoxF.Text = fString;
+
+        }
     }
 }
