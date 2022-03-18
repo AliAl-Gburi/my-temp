@@ -20,7 +20,15 @@ namespace View
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
 
+
+    }
     public class FahrenheitConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -59,13 +67,5 @@ namespace View
     }
 
    
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-
-        
-    }
+   
 }
