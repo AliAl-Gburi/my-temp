@@ -74,8 +74,7 @@ namespace View
         private void SliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             var kDouble = slider.Value;
-            string kString = kDouble.ToString();
-            textBoxK.Text = kString;
+            
 
             var cDouble = kDouble - 273.15;
             string cString = cDouble.ToString();
