@@ -9,7 +9,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
         <local:CelsiusConverter x:Key="celsiusConverter" />
-
+        <local:FahrenheitConverter x:Key="fahrenheitConverter" />
         <Style x:Key="labelStyle" TargetType="{x:Type TextBlock}">
             <Setter Property="Background">
                 <Setter.Value>
@@ -56,7 +56,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="Value in Fahrenheit:" Style="{StaticResource labelStyle}" />
-            <TextBox Grid.Row="1" x:Name="textBoxF" Style="{StaticResource textBoxStyle}"/>
+            <TextBox Grid.Row="1" x:Name="textBoxF" Text="{Binding ElementName=slider, Path=Value, Converter={StaticResource fahrenheitConverter}, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource textBoxStyle}"/>
            
         </Grid>
         <Grid>
