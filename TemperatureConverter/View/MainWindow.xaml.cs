@@ -30,12 +30,22 @@ namespace View
 
     }
 
-    public class TemperatureConverter
+    public class TemperatureConverter : IValueConverter
     {
-        
+        public ITemperatureScale TemperatureScale { get; set; }
         public TemperatureConverter()
         {
 
+        }
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     } 
     

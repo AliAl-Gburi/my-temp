@@ -9,10 +9,8 @@ namespace View
     internal interface ITemperatureScale
     {
         string Name { get; }
-
-        double ConvertToKelvin(double temperature);
         double ConvertFromKelvin(double temperature);
-
+        double ConvertToKelvin(double temperature);
     }
 
     public class KelvinTemperatureScale : ITemperatureScale
@@ -56,7 +54,7 @@ namespace View
 
         public double ConvertToKelvin(double temperature)
         {
-            return (temperature - 32) * (5 / 9) + 273.15; 
+            return (temperature - 32) * (5 / 9) + 273.15;
         }
     }
 }
