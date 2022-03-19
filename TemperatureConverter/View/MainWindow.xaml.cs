@@ -29,6 +29,15 @@ namespace View
 
 
     }
+
+    public class TemperatureConverter
+    {
+        
+        public TemperatureConverter()
+        {
+
+        }
+    } 
     
     public class CelsiusConverter : IValueConverter
     {
