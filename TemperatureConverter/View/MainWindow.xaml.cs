@@ -33,19 +33,20 @@ namespace View
     public class TemperatureConverter : IValueConverter
     {
         public ITemperatureScale TemperatureScale { get; set; }
-        public TemperatureConverter()
-        {
-
-        }
+        
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            var kelvin = (double)value;
+
+            return this.TemperatureScale.ConvertFromKelvin(kelvin);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            string temperature = (string)value;
+
+
         }
     } 
     
